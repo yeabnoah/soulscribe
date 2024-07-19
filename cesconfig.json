@@ -1,0 +1,35 @@
+{
+  "cesVersion": "2.11.12",
+  "projectName": "all_time_starter_kit",
+  "packages": [
+    {
+      "name": "expo-router",
+      "type": "navigation",
+      "options": {
+        "type": "stack"
+      }
+    },
+    {
+      "name": "nativewind",
+      "type": "styling"
+    }
+  ],
+  "flags": {
+    "noGit": false,
+    "noInstall": false,
+    "overwrite": false,
+    "importAlias": true,
+    "packageManager": "pnpm",
+    "eas": false
+  },
+  "packageManager": {
+    "type": "pnpm",
+    "version": "9.4.0"
+  },
+  "os": {
+    "type": "Linux",
+    "platform": "linux",
+    "arch": "x64",
+    "kernelVersion": "6.8.0-36-generic"
+  }
+}
