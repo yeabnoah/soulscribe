@@ -4,7 +4,28 @@ module.exports = {
 
   presets: [require('nativewind/preset')],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        background: '#3d3d3d',
+        primary: '#E8DCD0',
+        darkBackground: '#5f4137',
+      },
+      fontFamily: {
+        josefinSlabRegular: ['josefinSlab-Regular'],
+        josefinSlabLight: ['josefinSlab-Light'],
+        josefinSlabLightItalic: ['josefinSlab-LightItalic'],
+        josefinSlabBold: ['josefinSlab-Bold'],
+        josefinSlabBoldItalic: ['josefinSlab-BoldItalic'],
+        josefinSlabThin: ['josefinSlab-Thin'],
+        josefinSlabThinItalic: ['josefinSlab-ThinItalic'],
+        josefinSlabMedium: ['josefinSlab-Medium'],
+        josefinSlabMediumItalic: ['josefinSlab-MediumItalic'],
+        josefinSlabExtraLight: ['josefinSlab-ExtraLight'],
+        josefinSlabExtraLightItalic: ['josefinSlab-ExtraLightItalic'],
+        josefinSlabSemiBold: ['josefinSlab-SemiBold'],
+        josefinSlabSemiBoldItalic: ['josefinSlab-SemiBoldItalic'],
+      },
+    },
   },
   plugins: [],
 };

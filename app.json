@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "all_time_starter_kit",
-    "slug": "all_time_starter_kit",
+    "name": "Soulscribe",
+    "slug": "soulscribe",
     "version": "1.0.0",
 
-    "scheme": "all_time_starter_kit",
+    "scheme": "soulscribe",
     "web": {
       "bundler": "metro",
       "output": "static",
