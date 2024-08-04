@@ -16,6 +16,7 @@
     "@expo/vector-icons": "^14.0.0",
     "@react-navigation/native": "^6.1.7",
     "expo": "^51.0.21",
+    "expo-clipboard": "~6.0.3",
     "expo-constants": "~16.0.1",
     "expo-font": "~12.0.9",
     "expo-linking": "~6.3.1",

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -13,34 +13,64 @@ import { useRouter } from 'expo-router';
 import list from '~/constant/list';
 
 export default function List() {
+  const [selectedType, setSelectedType] = useState('all'); // State to manage the selected type
   const width = Dimensions.get('window').width;
   const router = useRouter();
 
+  // Filter the list based on the selected type
+  const filteredList =
+    selectedType === 'all' ? list : list.filter((item) => item.type === selectedType);
+
   return (
-    <View className="flex-1">
-      <StatusBar backgroundColor="transparent" barStyle={'dark-content'} />
-      <ImageBackground
-        className="flex-1 flex-col items-center justify-center"
-        source={require('../assets/images/bg/homeBg.png')}>
-        <View className=" mx-auto mt-[5vh] h-[91%] w-[94vw] rounded-2xl bg-background">
+    <View className="flex-1 bg-background">
+      <ImageBackground source={require('../assets/images/test.jpg')} className="flex-1">
+        <StatusBar backgroundColor="transparent" barStyle={'light-content'} />
+
+        <View className="mx-auto mt-[7vh] h-[100%] w-full rounded-2xl">
+          <View className="my-4 flex-row justify-around">
+            <TouchableOpacity onPress={() => setSelectedType('all')}>
+              <Text
+                className={`text-xl ${selectedType === 'all' ? 'text-primary' : 'text-white'} font-jostRegular`}>
+                All
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setSelectedType('relationship')}>
+              <Text
+                className={`text-xl ${selectedType === 'relationship' ? 'text-primary' : 'text-white'} font-jostRegular`}>
+                Relationship
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setSelectedType('Behavior')}>
+              <Text
+                className={`text-xl ${selectedType === 'behavior' ? 'text-primary' : 'text-white'} font-jostRegular`}>
+                Behavior
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setSelectedType('general')}>
+              <Text
+                className={`text-xl ${selectedType === 'general' ? 'text-primary' : 'text-white'} font-jostRegular`}>
+                General
+              </Text>
+            </TouchableOpacity>
+          </View>
+
           <FlatList
-            className=" mx-5 py-3"
-            data={list}
+            showsVerticalScrollIndicator={false}
+            className="mx-2 rounded-xl bg-black/20 py-3"
+            data={filteredList}
             renderItem={({ item }) => (
-              <View className="  my-1 flex flex-col">
+              <View className="my-1 flex flex-col rounded px-5 py-3 py-4">
                 <TouchableOpacity
                   onPress={() => {
-                    router.push(`/${item.type}`);
+                    router.push(`/${item.title}`);
                   }}
                   key={item.id}
-                  className=" my-3 flex flex-row items-center justify-between text-wrap">
-                  <Text className=" font-josefinSlabSemiBold w-[80%] text-wrap text-xl text-primary">
-                    {item.type}
+                  className="flex flex-row items-center justify-between text-wrap">
+                  <Text className="w-[80%] text-wrap font-jostMedium text-xl text-primary/80">
+                    {item.title}
                   </Text>
-
-                  <AntDesign name="arrowright" size={23} color="#e8dcd0" />
+                  <AntDesign name="arrowright" size={16} color="rgb(212 212 212)" />
                 </TouchableOpacity>
-                <View className=" border-b-[.3px] border-b-primary "></View>
               </View>
             )}
           />
