@@ -24,45 +24,57 @@ export default function Category() {
   const router = useRouter();
   const { category } = useLocalSearchParams();
 
-  const data = list.find((item) => item.title == category);
+  const data = list.find((item) => item.type == category);
   const dataUpdated = data?.data;
 
   return (
     <View className="flex-1">
-      <ImageBackground source={require('../assets/images/test.jpg')} className=" flex-1">
-        <StatusBar backgroundColor="transparent" barStyle={'light-content'} />
+      <StatusBar backgroundColor="transparent" barStyle={'dark-content'} />
+      <ImageBackground
+        className="flex-1 pt-[5vh]"
+        source={require('../assets/images/bg/listBg.png')}>
         <View className="flex-1">
-          <View className="flex-1">
-            <Text className="mx-7 mb-3 mt-16 font-jostSemiBold text-2xl text-background/80">
-              {category}
-            </Text>
+          <View className="mx-5  border-b-gray-500" />
+          <View className="mx-5">
+            <TouchableOpacity
+              onPress={() => {
+                router.push('/list');
+              }}
+              className="flex flex-row items-center gap-3">
+              <AntDesign name="left" size={20} color="#000000" />
+              <Text className="font-josefinSlabBold py-3 text-2xl">Back</Text>
+            </TouchableOpacity>
+          </View>
+          <View className="mx-5 border-b-[1.3px] border-b-gray-500" />
 
-            <View className="mx-auto flex-1 rounded-t-xl">
+          <View className="flex-1">
+            <Text className="font-josefinSlabSemiBold m-5 w-80 text-4xl">{category}</Text>
+
+            <View className="mx-auto w-[94vw] flex-1 rounded-t-xl bg-background">
               <FlatList
-                className="mx-auto px-5 py-5"
+                className="px-5"
                 showsVerticalScrollIndicator={false}
                 data={dataUpdated}
                 renderItem={({ item }) => (
-                  <View className="mb-3 rounded-xl bg-black/20 px-5">
-                    <Text className="mt-3  font-jostMedium text-2xl text-primary/80">
+                  <View className="mb-3">
+                    <Text className="font-josefinSlabSemiBold mt-3 text-2xl text-primary">
                       {item.title}
                     </Text>
-                    <Text className="mt-3  font-jostRegular text-lg text-primary">
+                    <Text className="font-josefinSlabSemiBold mt-3 text-lg text-primary">
                       {item.description}
                     </Text>
 
-                    <View className="flex-row items-center justify-end">
-                      <TouchableOpacity
-                        onPress={() => {
-                          router.push(`/verse/${item.id}?category=${category}`);
-                        }}
-                        className="my-5 flex w-fit flex-row items-center justify-end gap-2 rounded bg-black/20 px-2 py-1">
-                        <Text className="text-right font-jostRegular text-lg text-primary ">
-                          Read Verse
-                        </Text>
-                        <AntDesign name="arrowright" size={16} color="#d4d4d4" />
-                      </TouchableOpacity>
-                    </View>
+                    <TouchableOpacity
+                      onPress={() => {
+                        router.push(`/verse/${item.id},${category}`);
+                      }}
+                      className="flex flex-row items-center justify-end gap-2">
+                      <Text className="font-josefinSlabMedium text-right text-lg text-red-400">
+                        Read Verse
+                      </Text>
+                      <AntDesign name="arrowright" size={16} color="#f87171" />
+                    </TouchableOpacity>
+                    <View className="mt-5 border-b-[.5px] border-b-gray-500" />
                   </View>
                 )}
               />

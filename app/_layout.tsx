@@ -10,19 +10,19 @@ const categories = ['Category1', 'Category2', 'Category3']; // Replace with your
 
 export default function Layout() {
   const [loaded, error] = useFonts({
-    'jost-Light': require('../assets/fonts/Jost-Light.ttf'),
-    'jost-Regular': require('../assets/fonts/Jost-Regular.ttf'),
-    'jost-LightItalic': require('../assets/fonts/Jost-LightItalic.ttf'),
-    'jost-Bold': require('../assets/fonts/Jost-Bold.ttf'),
-    'jost-BoldItalic': require('../assets/fonts/Jost-BoldItalic.ttf'),
-    'jost-Thin': require('../assets/fonts/Jost-Thin.ttf'),
-    'jost-ThinItalic': require('../assets/fonts/Jost-ThinItalic.ttf'),
-    'jost-Medium': require('../assets/fonts/Jost-Medium.ttf'),
-    'jost-MediumItalic': require('../assets/fonts/Jost-MediumItalic.ttf'),
-    'jost-ExtraLight': require('../assets/fonts/Jost-ExtraLight.ttf'),
-    'jost-ExtraLightItalic': require('../assets/fonts/Jost-ExtraLightItalic.ttf'),
-    'jost-SemiBold': require('../assets/fonts/Jost-SemiBold.ttf'),
-    'jost-SemiBoldItalic': require('../assets/fonts/Jost-SemiBoldItalic.ttf'),
+    'josefinSlab-Light': require('../assets/fonts/JosefinSlab-Light.ttf'),
+    'josefinSlab-Regular': require('../assets/fonts/JosefinSlab-Regular.ttf'),
+    'josefinSlab-LightItalic': require('../assets/fonts/JosefinSlab-LightItalic.ttf'),
+    'josefinSlab-Bold': require('../assets/fonts/JosefinSlab-Bold.ttf'),
+    'josefinSlab-BoldItalic': require('../assets/fonts/JosefinSlab-BoldItalic.ttf'),
+    'josefinSlab-Thin': require('../assets/fonts/JosefinSlab-Thin.ttf'),
+    'josefinSlab-ThinItalic': require('../assets/fonts/JosefinSlab-ThinItalic.ttf'),
+    'josefinSlab-Medium': require('../assets/fonts/JosefinSlab-Medium.ttf'),
+    'josefinSlab-MediumItalic': require('../assets/fonts/JosefinSlab-MediumItalic.ttf'),
+    'josefinSlab-ExtraLight': require('../assets/fonts/JosefinSlab-ExtraLight.ttf'),
+    'josefinSlab-ExtraLightItalic': require('../assets/fonts/JosefinSlab-ExtraLightItalic.ttf'),
+    'josefinSlab-SemiBold': require('../assets/fonts/JosefinSlab-SemiBold.ttf'),
+    'josefinSlab-SemiBoldItalic': require('../assets/fonts/JosefinSlab-SemiBoldItalic.ttf'),
   });
 
   useEffect(() => {

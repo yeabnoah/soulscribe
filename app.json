@@ -1,8 +1,9 @@
 {
   "expo": {
-    "name": "soulscribe",
+    "name": "Soulscribe",
     "slug": "soulscribe",
     "version": "1.0.0",
+
     "scheme": "soulscribe",
     "web": {
       "bundler": "metro",
@@ -12,15 +13,19 @@
     "plugins": ["expo-router"],
     "experiments": {
       "typedRoutes": true,
+
       "tsconfigPaths": true
     },
+
     "orientation": "portrait",
-    "icon": "./assets/images/adaptive-icon.png",
-    "userInterfaceStyle": "dark",
+    "icon": "./assets/icon.png",
+
+    "userInterfaceStyle": "light",
+
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#5b5b5b"
+      "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
@@ -28,17 +33,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#5b5b5b"
-      },
-      "package": "com.technerd345.soulscribe"
-    },
-    "extra": {
-      "router": {
-        "origin": false
-      },
-      "eas": {
-        "projectId": "690d7209-b1ac-4318-82e6-cbc94503aa0b"
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
       }
     }
   }
